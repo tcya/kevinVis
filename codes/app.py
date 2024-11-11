@@ -43,7 +43,7 @@ def construct_output_df():
         return
     res = []
     three_empty_rows = pd.DataFrame(index=pd.RangeIndex(3), columns=df.columns, dtype='object')
-    for s in df['Sample No'].unique():
+    for s in sorted(df['Sample No'].unique()):
         if res:
             res.append(three_empty_rows)
         sample_header = pd.DataFrame(index=pd.RangeIndex(1), columns=df.columns, dtype='object')
